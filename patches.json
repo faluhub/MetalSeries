@@ -47,7 +47,7 @@
                 "occurence": 0,
                 "limit": 1,
                 "string": "process.env.ENABLE_MOMENTS_MOCKS",
-                "replacement": "return true"
+                "replacement": "true"
             }
         ]
     },
