@@ -62,5 +62,17 @@
                 "replacement": "return { ggLoadoutEnabled: true, useEngineTestData: false, useGiveawaysTestData: false, useHomepageTestData: false };"
             }
         ]
+    },
+    "accessibility_checks": {
+        "enabled": true,
+        "patches": [
+            {
+                "file": "main/index.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "\"true\" === process.env.AXE_CORE",
+                "replacement": "true"
+            }
+        ]
     }
 }
