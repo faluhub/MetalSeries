@@ -1,0 +1,5 @@
+wmi
+psutil
+jsbeautifier
+asarPy
+cached_property

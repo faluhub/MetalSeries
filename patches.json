@@ -1,0 +1,66 @@
+{
+    "dev_mode": {
+        "enabled": true,
+        "patches": [
+            {
+                "file": "main/preload.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "return !1",
+                "replacement": "return true;"
+            },
+            {
+                "file": "main/index.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "global.devMode = !!e.dev",
+                "replacement": "global.devMode = true"
+            },
+            {
+                "file": "main/index.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "return !1",
+                "replacement": "return true;"
+            },
+            {
+                "file": "render/index.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "((e = (() => null))",
+                "replacement": "((e = () => null)"
+            },
+            {
+                "file": "render/index.js",
+                "occurence": 22,
+                "limit": 1,
+                "string": "(0, yt.useQuery)",
+                "replacement": "return (0, yt.useQuery)"
+            }
+        ]
+    },
+    "moments_mocks": {
+        "enabled": false,
+        "patches": [
+            {
+                "file": "main/preload.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "process.env.ENABLE_MOMENTS_MOCKS",
+                "replacement": "return true"
+            }
+        ]
+    },
+    "enable_gg_loadout": {
+        "enabled": true,
+        "patches": [
+            {
+                "file": "render/index.js",
+                "occurence": 0,
+                "limit": 1,
+                "string": "return e.flags",
+                "replacement": "return { ggLoadoutEnabled: true, useEngineTestData: false, useGiveawaysTestData: false, useHomepageTestData: false };"
+            }
+        ]
+    }
+}
