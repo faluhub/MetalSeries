@@ -1,6 +1,7 @@
 {
     "dev_mode": {
         "enabled": true,
+        "description": "Adds several things that devs have access to and normal users don't. Includes Electron stuff.",
         "patches": [
             {
                 "file": "main/preload.js",
@@ -27,20 +28,14 @@
                 "file": "render/index.js",
                 "occurence": 0,
                 "limit": 1,
-                "string": "((e = (() => null))",
-                "replacement": "((e = () => null)"
-            },
-            {
-                "file": "render/index.js",
-                "occurence": 22,
-                "limit": 1,
-                "string": "(0, yt.useQuery)",
-                "replacement": "return (0, yt.useQuery)"
+                "string": "e.showDevelopmentMenuItems",
+                "replacement": "true"
             }
         ]
     },
     "moments_mocks": {
         "enabled": false,
+        "description": "Enables the alternative Moments UI. You probably don't want to enable this because it doesn't have any interaction, but it's still cool.",
         "patches": [
             {
                 "file": "main/preload.js",
@@ -53,18 +48,20 @@
     },
     "enable_gg_loadout": {
         "enabled": true,
+        "description": "Enables the (discontinued?) 'GG Loadouts' tab.",
         "patches": [
             {
                 "file": "render/index.js",
                 "occurence": 0,
                 "limit": 1,
-                "string": "return e.flags",
-                "replacement": "return { ggLoadoutEnabled: true, useEngineTestData: false, useGiveawaysTestData: false, useHomepageTestData: false };"
+                "string": "l.ggLoadoutEnabled && s.loadoutsEligible",
+                "replacement": "true"
             }
         ]
     },
     "accessibility_checks": {
-        "enabled": true,
+        "enabled": false,
+        "description": "I have no idea what this is.",
         "patches": [
             {
                 "file": "main/index.js",

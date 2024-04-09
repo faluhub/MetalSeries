@@ -196,3 +196,4 @@ class Patcher:
         self.remove_temp_path()
 
 Patcher(Decompiler()).pack_asar()
+# Decompiler().beautify()
